@@ -5,16 +5,76 @@
 	<link rel="stylesheet" href="Page Dorian.css">
 </head>
 <body>
-    <h1>Dorian Longhi - Online French Tutor</h1>
-	<div></div>
+	<header class="header">
+	<nav class="navbar">
+    <a href="/">Why learning French?</a>
+    <a href="/contacts">My contacts</a>
+	<a href="/pricing">Pricing</a>
+	<a href="/testimonies">Testimonies</a>
+	<a href="/more">...and more</a>
+  </nav>
+  </header>
+  <div class="why">
+    <h1 class="title">Dorian Longhi - Online French Tutor</h1>
+	<h1>Why learning French?</h1>
     <p>Everybody has a different reason to learn French.<br>It could be either:</p>
-	<ul>
-	<li>For school, to understand your French classes better or to prepare for an exam.</li>
-	<li>For work, to improve your resume or your career.</li>
-	<li>For a project of going to France, either to move there or simply visit the country for holidays.</li>
-	<li>For your French family, friends, or colleagues, to try to create with them a smoother connection.</li>
-	<li>Or simply for curiosity about the French language, history, or culture.</li>
-	</ul>
+	<section class="reasons">
+  <div class="reason-card" style="--card-image: url('school.png')">
+    <div class="card-inner">
+      <div class="card-front">
+        <h3>For school</h3>
+      </div>
+      <div class="card-back">
+        <p>To understand your French classes better or to prepare for an exam.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="reason-card" style="--card-image: url('handshake.jpg')">
+    <div class="card-inner">
+      <div class="card-front">
+        <h3>For work</h3>
+      </div>
+      <div class="card-back">
+        <p>To improve your resume or your career.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reason-card" style="--card-image: url('paris.jpg')">
+    <div class="card-inner">
+      <div class="card-front">
+        <h3>For going to France</h3>
+      </div>
+      <div class="card-back">
+        <p>To move there or simply visit the country for holidays.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reason-card" style="--card-image: url('share.jpg')">
+    <div class="card-inner">
+      <div class="card-front">
+        <h3>For your French family, friends, or colleagues</h3>
+      </div>
+      <div class="card-back">
+        <p>to create with them a smoother connection.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reason-card"style="--card-image: url('books.jpg')">
+    <div class="card-inner">
+      <div class="card-front">
+        <h3>For curiosity</h3>
+      </div>
+      <div class="card-back">
+        <p>To understand the French language, history, or culture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 	<p>And you may already have one or more of these reasons in mind... and don't know who would be able to help you.</p>
 	<p>Until now!</p>
 	<img src="Photo for webpage.png" alt="Description" class="photo">
@@ -36,18 +96,20 @@ In my classes, curiosity is always encouraged, and mistakes are just a normal pa
 <p>At last, communication between teacher and student won't be an issue, as I speak fluent English.<br>This way, you would never feel lost when I explain the subtleties and nuances of the French language with clear, comprehensible terms and also answer precisely to your questions.</p>
 
 <p>So whether you want to:<ul>
-<li>Prepare for an exam.</li>
-<li>Improve your academic skills.</li>
-<li>Boost your resume.</li>
-<li>Be able to communicate in French more clearly.</li>
-<li>Discover the subtilities of the French culture.</li>
-<li>Or simply learn for fun.</li></ul>
+<li>💯Prepare for an exam.</li>
+<li>🌟Improve your academic skills.</li>
+<li>✅Boost your resume.</li>
+<li>🗣️Be able to communicate in French more clearly.</li>
+<li>🥖Discover the subtilities of the French culture.</li>
+<li>🎉Or simply learn for fun.</li></ul>
 <p>I’m here to help you achieve your goals, with patience, structure, and enthusiasm!</p>
 
 <p>So, ready to take your skills to the next level? Book your first class with me, and let’s get started together!</p>
 
 <p>À bientôt (see you soon) for your next French lesson!</p>
+</div>
 
+<div class="cnp">
 <h1>My contacts</h1>
 <div class="wrapper-gmail">
 <div>
@@ -69,15 +131,39 @@ In my classes, curiosity is always encouraged, and mistakes are just a normal pa
 <p>30USD per hour</p>
 <p>FREE 15-minutes consultation</P>
 <p>Before booking your first lesson, let's talk about your goals, your current level, and what you're looking for, so we can see whether we're a good fit.</p>
+</div>
 <h1>What my students say about my lessons</h2>
-<img src="Review 1.png" alt="Description" class="profile-review">
+<img src="Review 1.png" alt="Description" class="profile-review1">
 <img src="Review 2.png" alt="Description" class="profile-review">
 <img src="Review 3.png" alt="Description" class="profile-review">
 <img src="Review 4.png" alt="Description" class="profile-review">
 <img src="Review 5.png" alt="Description" class="profile-review">
-
+<div class="finally">
 <h1>Finally, if you want to hear a bit more about me</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_TlpBcViLvM?si=X5CLJjcXtPeVweKZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<script>
+  const header = document.querySelector(".header");
 
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    const difference = currentScrollY - lastScrollY;
+
+    // Always show the header near the top
+    if (currentScrollY < 80) {
+      header.classList.remove("hidden");
+    } else if (difference > 5) {
+      // Scrolling down: hide
+      header.classList.add("hidden");
+    } else if (difference < -5) {
+      // Scrolling up: show
+      header.classList.remove("hidden");
+    }
+
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+</script>
 </body>
 </html>
